@@ -3,16 +3,27 @@
 
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jonathan Lim's Portfolio</title>
     <link rel="icon" href="./img/robot.png">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
     <link href="css/creative.min.css" rel="stylesheet">
+
+    <!-- My Own CSS Stylesheets -->
+    <link rel="stylesheet" href="css/timeline.css">
+
   </head>
 
   <script type="text/javascript">
+    //typing text
     var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
@@ -62,7 +73,6 @@
               new TxtType(elements[i], JSON.parse(toRotate), period);
             }
         }
-        // INJECT CSS
         var css = document.createElement("style");
         css.type = "text/css";
         css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
@@ -86,6 +96,15 @@
     }
     .black {
       color: black;
+    }
+    .close-button {
+      position: absolute; 
+      top: 1.5rem; 
+      right: 2rem;
+    }
+    .modal-img {
+      width: 100%; 
+      height: 100%;
     } 
   </style>
   
@@ -126,7 +145,7 @@
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
-            <a class="typewrite text-white text-center typewrite-style" text-duration="1500" input='["Electrical Engineering Student", "Software Developer", "AI/Quantum Computing Geek", "Golf Player", "Aspiring Software Engineer"]'>
+            <a class="typewrite text-white text-center typewrite-style" text-duration="1500" input='["Electrical Engineering Student", "Software Developer", "AI/Quantum Computing Geek", "Golf Player", "Aspiring Data Scientist"]'>
               <span class="wrap"></span>
             </a>
           </div>
@@ -142,14 +161,14 @@
             <hr class="light my-4">
             <img class="round-img" src="./img/portfolioPic.jpg">
             <hr class="light my-3">
-            <p class="text-faded mb-1">I am currently a senior majoring in Electrical Engineering at UC Irvine. I have always been passionate and excited about all kinds of technology, and would not miss any opportunities to get out of my comfort zone and learn about them as much as I can. Please keep scrolling to check out the projects I work on and my skillset!</p>
+            <p class="text-faded mb-1">I am currently a senior majoring in Electrical Engineering at UC Irvine. I have always been passionate and excited about all kinds of technology, and would not miss any opportunities to get out of my comfort zone and learn about them as much as I can. Please keep scrolling to check out my experiences and the projects I work on!</p>
           </div>
           <div class="row">
             <div class="text-center col-lg-4">
               <div class="service-box mt-5 mx-auto">
                 <i class="fas fa-4x fa-laptop text-white mb-3 sr-icon-1"></i>
                 <h3 class="text-white mb-2">Mobile/Web App Developer</h3>
-                <p class="text-faded mb-0">I have developed mobile apps for Android and iOS and websites both personally and for work. The programming languages I use are Java, Javascript, HTML, and Swift.</p>
+                <p class="text-faded mb-0">I have developed Android and iOS mobile apps and websites both personally and for work. The programming languages I use are Java, Javascript, HTML, and Swift.</p>
               </div>
             </div>
             <div class="text-center col-lg-4">
@@ -179,111 +198,169 @@
             <hr class="my-4">
           </div>
         </div>
-        <div class="timeline">
-          <div class="container left">
-            <div class="content">
-              <h2>2017</h2>
-              <p>Lorem ipsum..</p>
+        <div id="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="img/work.png" width="22px" height="22px">
+                </div>
+                <div class="timeline-content sr-timeline-1">
+                    <h2>Advanced Integrated Cyber-Physical Systems Lab</h2>
+                    <h2 style="font-size: 1rem; color: rgba(255, 255, 255, 0.7);">
+                      Aug. 2018 - Present
+                    </h2>
+                    <p>
+                        I joined Advanced Integrated Cyber-Physical Systems Lab's Autonomous Racecar project at UC Irvine as my senior design project this summer. As a student researcher under the project, I mainly use ROS as the interface to interact with the autonomous vehicle, such as launching and testing software on the NVIDIA Jetson TX2 module installed on the vehicle. Also, I implemented Google Cartographer using data collected from the IMU and LIDAR to map the vehicle's environment, and am working on pathfinding and obstacle avoidance algorithms using Python and C++.     
+                    </p>
+                </div>
             </div>
-          </div>
-          <div class="container right">
-            <div class="content">
-              <h2>2016</h2>
-              <p>Lorem ipsum..</p>
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="img/work.png" width="22px" height="22px">
+                </div>
+                <div class="timeline-content right sr-timeline-2">
+                    <h2>NetObjex, Inc.</h2>
+                    <h2 style="font-size: 1rem; color: rgba(255, 255, 255, 0.7);">
+                      Jul. 2018 - Present
+                    </h2>
+                    <p>
+                        I have been interning at NetObjex, Inc. as an IoT engineer since this summer working on a product called "PiQube". I utilized Yocto Project to set up basic layers and recipes for NetObjex's embedded Linux distribution on a Raspberry Pi, and developed Python scripts to perform health check on the Raspberry Pi through the usage of classes, threads, and MQTT library. I am currently designing and implementing the software architecture for "PiQube" for different communication protocols' client-server communication on IoT-enabled devices.       
+                    </p>
+                </div>
             </div>
-          </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="img/work.png" width="22px" height="22px">
+                </div>
+                <div class="timeline-content sr-timeline-3">
+                    <h2>Microbiomechanics Laboratory</h2>
+                    <h2 style="font-size: 1rem; color: rgba(255, 255, 255, 0.7);">
+                      Oct. 2017 - Sept. 2018
+                    </h2>
+                    <p>
+                        I was an undergraduate data analyst and Multidisciplinary Design Program (MDP) Fellow at Microbiomechanics Laboratory. As an undergraduate data analyst, I was tasked to perform statistical analysis, such as linear regression, on the neuronal data collected from Multi-Electrode Arrays (MEAs) to provide insightful knowledge about the behaviors of neuronal activities with Python. Also, as a MDP Fellow, I conducted research on various approaches of utilizing oxygen sensors and oxygen sensor probes to monitor PO2 level and oxygen concentration in microfluidic bioreactor.       
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="img/work.png" width="22px" height="22px">
+                </div>
+                <div class="timeline-content right sr-timeline-4">
+                    <h2>Calit2 - UC Irvine Division</h2>
+                    <h2 style="font-size: 1rem; color: rgba(255, 255, 255, 0.7);">
+                      Mar. 2017 - Oct. 2017
+                    </h2>
+                    <p>
+                        I worked as an undergraduate software developer at Calit2, where I developed iOS mobile applications for health-related projects with Swift and performed data analysis on the energy consumption of electronics using Python. I parsed and analyzed data regarding the power and energy consumption of electronics, such as TVs and projectors, obtained from smart plugs deployed at multiple locations in UC Irvine to have a better understanding of how users interact with their electronics at different times of the day, week, and month.       
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="img/work.png" width="22px" height="22px">
+                </div>
+                <div class="timeline-content sr-timeline-4">
+                    <h2>California Plug Load Research Center (CalPlug)</h2>
+                    <h2 style="font-size: 1rem; color: rgba(255, 255, 255, 0.7);">
+                      Jan. 2016 - Present
+                    </h2>
+                    <p>
+                        Since 2016, I have been working as an undergraduate researcher and project lead at CalPlug where I was exposed to various multidisciplinary projects. As an undergraduate researcher, I built Android mobile applications using both Java and React Native and web applications with Javascript, as well as experiment with different classification/clustering algorithms to sort the power consumption data collected using Python. Also, as a project lead, I managed a medical device project from prototype building to client delivery and supervised demo tours at CalPlug in the summer. Two examples of the projects I did can be found at the <i>Projects</i> Section below!
+                    </p>
+                </div>
+            </div>
         </div>
       </div>
     </section>
 
     <section class="p-0" id="portfolio">
       <div class="container-fluid p-0">
-        <div class="row no-gutters popup-gallery">
+        <div class="row no-gutters">
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="img/projects/1.jpg" alt="">
+            <a class="portfolio-box" data-toggle="modal" href="#project-modal-1">
+              <img class="img-fluid" src="img/projects/AVP_projects.jpg">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    In Progress
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Autonomous Racecar
+                  </div>
+                  <div class="project-category text-faded">
+                    2018
                   </div>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-              <img class="img-fluid" src="img/projects/2.jpg" alt="">
+            <a class="portfolio-box" data-toggle="modal" href="#project-modal-2">
+              <img class="img-fluid" src="img/projects/ml_disease_projects.png">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Completed
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Machine Learning for Disease Prediction
+                  </div>
+                  <div class="project-category text-faded">
+                    2017
                   </div>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-              <img class="img-fluid" src="img/projects/3.jpg" alt="">
+            <a class="portfolio-box" data-toggle="modal" href="#project-modal-3">
+              <img class="img-fluid" src="img/projects/1kwhChallenge_projects.jpg">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Completed
                   </div>
                   <div class="project-name">
-                    Project Name
+                    1kWh Challenge
+                  </div>
+                  <div class="project-category text-faded">
+                    2017-2018
                   </div>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-              <img class="img-fluid" src="img/projects/4.jpg" alt="">
+            <a class="portfolio-box" data-toggle="modal" href="#project-modal-4">
+              <img class="img-fluid" src="img/projects/safepassage_projects.png">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Completed
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Safe Passage Electronic Force Monitor
+                  </div>
+                  <div class="project-category text-faded">
+                    2016-2018
                   </div>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-              <img class="img-fluid" src="img/projects/5.jpg" alt="">
+            <a class="portfolio-box" data-toggle="modal" href="#project-modal-5">
+              <img class="img-fluid" src="img/projects/milkyway_projects.png">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Completed
                   </div>
                   <div class="project-name">
-                    Project Name
+                    MilkyWay
                   </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-              <img class="img-fluid" src="img/projects/6.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
+                    2016-2017
                   </div>
                 </div>
               </div>
@@ -303,34 +380,226 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-3 text-center">
+          <div class="col-lg-4 text-center">
             <a href="mailto:jonathan.cy.lim@gmail.com"><i class="fas fa-envelope fa-4x mb-3 sr-icon-1"></i></a>
           </div>
-          <div class="col-lg-3 text-center">
+          <div class="col-lg-4 text-center">
+            <a href="https://www.linkedin.com/in/jcylim1/"><i class="fab fa-linkedin fa-4x linkedin-blue mb-3 sr-icon-3"></i></a>
+          </div>
+          <div class="col-lg-4 text-center">
             <a href="https://github.com/jcylim"><i class="fab fa-github fa-4x black mb-3 sr-icon-2"></i></a>
-          </div>
-          <div class="col-lg-3 text-center">
-            <a href="https://www.linkedin.com/in/jcylim-123/"><i class="fab fa-linkedin fa-4x linkedin-blue mb-3 sr-icon-3"></i></a>
-          </div>
-          <div class="col-lg-3 text-center">
-            <a href="https://www.instagram.com/jcylim_123/"><i class="fab fa-instagram fa-4x black mb-3 sr-icon-4"></i></a>
           </div>
         </div>
       </div>
-
-      <!-- Bootstrap core JavaScript -->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-      <!-- Plugin JavaScript -->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-      <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-      <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-      <!-- Custom scripts for this template -->
-      <script src="js/creative.min.js"></script>
-
     </section>
+
+    <!-- Project Modals -->
+
+    <!-- Project 1 Modal -->
+    <div class="modal fade" id="project-modal-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header ">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">Autonomous Racecar</h2>
+              <hr class="my-3">
+            </div>
+            <a class="close-button d-none d-md-block" data-dismiss="modal" href="">
+              <i class="fa fa-2x fa-times"></i>
+            </a>
+          </div>
+          <img class="modal-img mb-3" align="center" src="img/projects/AVP.jpg" alt="">  
+          <div class="modal-body mb-3">
+            Autonomous Racecar is a project which aims to build an autonomous vehicle based on the F1tenth standards that can run by itself on any track, with integration of various software algorithms. The main interface/operating system used in the project is ROS or Robot Operating System, where all the software is tested and uploaded onto the autonomous vehicle. My main task is to implement Google Cartographer as our main Simultaneous Localization and Mapping (SLAM) algorithm and Adaptive Monte Carlo Localization (AMCL) to localize the vehicle, and assist my teammates in implementing pathfinding and obstacle avoidance algorithm.   
+          </div>
+          <div class="text-center mb-3">
+            <strong>Click the following icon to see source code of this project:</strong>
+          </div>
+          <div class="mb-3">
+            <div class="col-lg-12 text-center">
+              <a href="https://github.com/jcylim/AutonomousRacecar">
+                <i class="fab fa-github fa-4x black mb-3"></i>
+              </a>
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary mb-5" data-dismiss="modal">Close Project</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Project 2 Modal -->
+    <div class="modal fade" id="project-modal-2" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header ">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">Machine Learning for Disease Prediction</h2>
+              <hr class="my-3">
+            </div>
+            <a class="close-button d-none d-md-block" data-dismiss="modal" href="">
+              <i class="fa fa-2x fa-times"></i>
+            </a>
+          </div>
+          <img class="modal-img mb-3" align="center" src="img/projects/ml_disease.png" alt="">  
+          <div class="modal-body mb-3">
+            Machine Learning for Disease Prediction is an UROP-funded project that makes use of an interactice web application and different machine learning algorithms to display and predict patients' skin diseases based on the data collected about their symptoms/traits. My task was to build a simple, interactive full-stack web application capable of displaying patients' information with the provided patient's name using the React framework, Node.js, Express.js, and MongoDB, as well as to research about the machine learning algorithms to be used for the project.   
+            <br>
+            <br>
+            <b>Related Links:</b>
+            <br>
+            <a href="https://docs.google.com/presentation/d/1cz4fTuaileagY0xCRiT3JzjdXwh0SDH14oXVxdiZ6vY/edit?usp=sharing">Undergraduate Research Opportunities Program(UROP) Poster</a>  
+          </div>
+          <div class="text-center mb-3">
+            <strong>Click the following icon to see source code of this project:</strong>
+          </div>
+          <div class="mb-3">
+            <div class="col-lg-12 text-center">
+              <a href="https://github.com/sidkasat/UROPML">
+                <i class="fab fa-github fa-4x black mb-3"></i>
+              </a>
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary mb-5" data-dismiss="modal">Close Project</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Project 3 Modal -->
+    <div class="modal fade" id="project-modal-3" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header ">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">1kWh Challenge</h2>
+              <hr class="my-3">
+            </div>
+            <a class="close-button d-none d-md-block" data-dismiss="modal" href="">
+              <i class="fa fa-2x fa-times"></i>
+            </a>
+          </div>
+          <img class="modal-img mb-3" align="center" src="img/projects/1kwhChallenge.png" alt="">
+          <div class="modal-body mb-3">
+            1kWh Challenge is another project from CalPlug to educate and demonstrate to middle schoolers about the importance of saving energy and being aware about how much energy is consumed by electronics through the use of a web application. The demonstration of the project works like a game where the middle schoolers will either earn or deduce points based on how much energy they generated or consumed at each game station, and compare points with others at the end of the demonstration. My task was to assist in the completion of the web application using Javascript and the AngularJS framework, and to manage the workflow of the demonstrations.
+            <br>
+            <b>P.S. </b><i>I am not at the liberty to share the source code or any more detailed information of the project.</i>        
+            <br>
+            <br>
+            <b>Related Links:</b>
+            <br>
+            <a href="https://drive.google.com/open?id=0ByVnOCr-IjzcUlBJMUZMZjc3WGM">Game Operation Guides</a>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary mb-5" data-dismiss="modal">Close Project</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Project 4 Modal -->
+    <div class="modal fade" id="project-modal-4" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header ">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">Safe Passage Electronic Force Monitor</h2>
+              <hr class="my-3">
+            </div>
+            <a class="close-button d-none d-md-block" data-dismiss="modal" href="">
+              <i class="fa fa-2x fa-times"></i>
+            </a>
+          </div>
+          <img class="modal-img mb-3" align="center" src="img/projects/safepassage.jpg" alt="">  
+          <div class="modal-body mb-3">
+            Safe Passage Electronic Force Monitor is a medical device project from CalPlug, an on-campus organization I have been part of since the winter of my freshmen year. The purpose of the project is to build a FDA-approved medical device prototype to be tested by the Department of Urology at UC Irvine that is capable of monitoring the amount of force being exerted on patients during urinary surgeries. I was initally an Android developer under the project who helped build the project's first native Android application using Java, and later became the project's team lead who both built the React Native version of the Android application and oversaw the logistics of the project until its completiton in the early Fall of 2018.
+            <br>
+            <b>P.S. </b><i>I am not at the liberty to share the source code or any more detailed information of the project. However, I have shared one key technology to the success of the project below.</i>    
+            <br>
+            <br>
+            <b>Related Links:</b>
+            <br>
+            <a href="https://drive.google.com/open?id=1IGj7Nuuqi6lU_VN8BI145ZqEqKUmBHPX">Project Poster</a> 
+            <br>
+            <a href="https://www.youtube.com/watch?v=O3rAx-gd5ao">Espressif ESP32 with BLE Demo</a>
+            <br>
+            <a href="https://drive.google.com/open?id=1zI_SKpN_42PjOcUbCyQ9sFozxVGm8maJ">Images Related To Project</a> 
+          </div>
+          <div class="text-center mb-3">
+            <strong>Click the following icon to see source code of the demo shown above:</strong>
+          </div>
+          <div class="mb-3">
+            <div class="col-lg-12 text-center">
+              <a href="https://github.com/CalPlug/Espressif_ESP32-Scale">
+                <i class="fab fa-github fa-4x black mb-3"></i>
+              </a>
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary mb-5" data-dismiss="modal">Close Project</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Project 5 Modal -->
+    <div class="modal fade" id="project-modal-5" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header ">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">MilkyWay</h2>
+              <hr class="my-3">
+            </div>
+            <a class="close-button d-none d-md-block" data-dismiss="modal" href="">
+              <i class="fa fa-2x fa-times"></i>
+            </a>
+          </div>
+          <img class="mb-3" align="center" style="display: block; margin-left: auto; margin-right: auto; width: 50%;" src="img/projects/milkyway.png" alt="">
+          <div class="modal-body mb-3">
+            MilkyWay was a business venture I co-founded with two of my college friends that uses an Android application to help small to middle businesses retain their customers with our own customer loyalty program at POS. I acted as the CEO and main frontend developer of the project who built both the native and React Native version of the Android application and managed the business development/branding, logistics, and team dynamic of the project.
+            <br>
+            <b>P.S. </b><i>The project was left on hold after we all agreed on focusing on schoolwork instead.</i>    
+            <br>
+            <br>
+            <b>Related Links:</b>
+            <br>
+            <a href="https://drive.google.com/open?id=1SVFSHMWiDzoWTI0bG9lKih96DJLKpb1m">App Demo</a>
+            <br>
+            <a href="https://docs.google.com/document/d/1cDKj_RFhB3eJL9rfnaU909pGDblVdokgDggUrM9cYeY/edit?usp=sharing">Business Plan</a>
+          </div>
+          <div class="text-center mb-3">
+            <strong>Click the following icons to see source code of this project:</strong>
+          </div>
+          <div class="row mb-3">
+            <div class="col-lg-6 text-center">
+              <a href="https://github.com/jcylim/MilkyWayApp">
+                <i class="fab fa-react fa-6x mb-3" style="color: #00d8ff;"></i>
+              </a>
+            </div>
+            <div class="col-lg-6 text-center">
+              <a href="https://github.com/jcylim/MilkyWayApp_Android">
+                <i class="fab fa-android fa-6x mb-3" style="color: #a4c639;"></i>
+              </a>
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary mb-5" data-dismiss="modal">Close Project</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
 
   </body>
 </html>
